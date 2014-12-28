@@ -1,7 +1,7 @@
 facetrack
 =========
 
-OpenCV face tracking on the Rapsberry Pi using Python
+OpenCV face tracking on the Raspberry Pi using Python
 
 
 Core code borrowed from [Pan / Tilt face tracking with the raspberry pi](http://instructables.com/id/Pan-Tilt-face-tracking-with-the-raspberry-pi "instructables")
