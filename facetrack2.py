@@ -60,7 +60,7 @@ ServoPanCP = Queue()	# Servo zero current position, sent by subprocess and read 
 ServoTiltCP = Queue()	# Servo one current position, sent by subprocess and read by main process
 ServoPanDP = Queue()	# Servo zero desired position, sent by main and read by subprocess
 ServoTiltDP = Queue()	# Servo one desired position, sent by main and read by subprocess
-ServoPanS = Queue()	    # Servo zero speed, sent by main and read by subprocess
+ServoPanS = Queue()	# Servo zero speed, sent by main and read by subprocess
 ServoTiltS = Queue()	# Servo one speed, sent by main and read by subprocess
 
 cv2.cv.NamedWindow("video", cv2.cv.CV_WINDOW_AUTOSIZE)
