@@ -6,19 +6,26 @@ OpenCV face tracking on the Raspberry Pi using Python
 
 Core code borrowed from [Pan / Tilt face tracking with the raspberry pi](http://instructables.com/id/Pan-Tilt-face-tracking-with-the-raspberry-pi "instructables")
 
-To install the RPIO library, you can use the following:
+If not preinstalled with Raspbian, you can use the following to install the PIGPIO library:
 ```
-sudo apt-get install python-setuptools
-sudo easy_install -U RPIO
+wget abyz.co.uk/rpi/pigpio/pigpio.zip
+unzip pigpio.zip
+cd PIGPIO
+make
+sudo make install
+
+#setup pigpiod to auto load by adding a line to crontab
+sudo crontab -e
+@reboot  /usr/local/bin/pigpiod
 ```
 
 
-RPIO docs are [here](http://pythonhosted.org/RPIO/rpio_py.html) if you need them.
+PIGPIO docs are [here](http://abyz.me.uk/rpi/pigpio/python.html) if you need them.
 
 
 Additional Info
 ---------------
-I replaced the calls to ServoBlaster with RPIO just to keep everything a little more in the Python realm codewise.  The RPIO library is generally a drop-in replacement for RPi.GPIO, but is usually a few steps ahead of it in terms of features.  One thing to keep in mind is that you probably don't want to import both RPi.GPIO and RPIO in the same project as they'll step on each other.
+I replaced the calls to ServoBlaster with ~~RPIO~~ PIGPIO just to keep everything a little more in the Python realm codewise.  The RPIO library has had a history of not keeping up with hardware updates so I switched over to pigpio which is now included as part of the default raspian installation.
 
 RPi.GPIO doesn't work for this project because it's implementation of PWM is software based, and the resulting signal is too erratic to control the servos smoothly enough for OpenCV tracking.  RPIO (and ServoBlaster) uses DMA and while not a full hardware implementation, it removes enough servo jitter to be usable.
 
