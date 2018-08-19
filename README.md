@@ -5,7 +5,7 @@ OpenCV face tracking on the Raspberry Pi using Python
 ```
 sudo apt-get install python-opencv
 ```
-
+Be sure to enable the camera on the Raspberry pi and add bcm2835-v4l2 to /etc/modules
 
 Core code borrowed from [Pan / Tilt face tracking with the raspberry pi](http://instructables.com/id/Pan-Tilt-face-tracking-with-the-raspberry-pi "instructables")
 
